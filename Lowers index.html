@@ -2,13 +2,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOWERS Hack Style</title>
+<title>LOWERS Hack Style Mobile</title>
 <style>
 body {margin:0;padding:0;height:100vh;background:black;font-family:monospace;color:#33ff77;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 video {position:absolute;width:100%;height:100%;object-fit:cover;z-index:1;}
 .overlay {position:relative; z-index:2;text-align:center;}
-.logo {font-size:80px;letter-spacing:8px;color:transparent;background:linear-gradient(90deg,#33ff77,#00e6ff);-webkit-background-clip:text;opacity:0;margin-bottom:20px;animation:glitch 1s infinite;}
-.cursor {display:inline-block;width:12px;background-color:#33ff77;animation:blink 0.8s steps(1) infinite;}
+.logo {font-size:60px;letter-spacing:5px;color:transparent;background:linear-gradient(90deg,#33ff77,#00e6ff);-webkit-background-clip:text;opacity:0;margin-bottom:15px;animation:glitch 1s infinite;}
+.cursor {display:inline-block;width:8px;background-color:#33ff77;animation:blink 0.8s steps(1) infinite;}
 @keyframes blink {50% {opacity:0;}}
 @keyframes glitch {
   0% {text-shadow:2px 0 #00e6ff,-2px 0 #33ff77;}
@@ -18,14 +18,14 @@ video {position:absolute;width:100%;height:100%;object-fit:cover;z-index:1;}
   100% {text-shadow:2px 0 #00e6ff,-2px 0 #33ff77;}
 }
 canvas {position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;}
-button {padding:10px 20px;margin:5px;border:none;border-radius:8px;background:rgba(51,255,119,0.2);color:#33ff77;cursor:pointer;transition:0.3s;}
+button {padding:8px 16px;margin:5px;border:none;border-radius:6px;background:rgba(51,255,119,0.2);color:#33ff77;cursor:pointer;transition:0.3s;font-size:14px;}
 button:hover {background:rgba(51,255,119,0.5);}
-.controls {display:flex;justify-content:center;margin-top:20px;opacity:0;transition:opacity 0.5s;}
+.controls {display:flex;justify-content:center;margin-top:15px;opacity:0;transition:opacity 0.5s;}
 </style>
 </head>
 <body>
 <canvas id="matrix"></canvas>
-<video id="introVideo" autoplay muted>
+<video id="introVideo" autoplay muted playsinline>
   <source src="https://cdn.pixabay.com/vimeo/Video.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -43,7 +43,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
-const fontSize = 16;
+const fontSize = 14;
 const columns = canvas.width / fontSize;
 const drops = [];
 for(let x = 0; x < columns; x++) drops[x] = 1;
